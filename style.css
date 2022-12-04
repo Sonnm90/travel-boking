@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
-:root{
+/* :root{
   --orange:#ffa500;
-}
+} */
 
 *{
   font-family: 'Nunito', sans-serif;
@@ -15,7 +15,7 @@
 }
 
 *::selection{
-  background:var(--orange);
+  background:orange;
   color:#fff;
 }
 
@@ -38,7 +38,7 @@ section{
 .heading span{
   font-size: 3.5rem;
   background:rgba(255, 165, 0,.2);
-  color:var(--orange);
+  color:orange;
   border-radius: .5rem;
   padding:.2rem 1rem;
 }
@@ -50,17 +50,17 @@ section{
 .btn{
   display: inline-block;
   margin-top: 1rem;
-  background:var(--orange);
+  background:orange;
   color:#fff;
   padding:.8rem 3rem;
-  border:.2rem solid var(--orange);
+  border:.2rem solid orange;
   cursor: pointer;
   font-size: 1.7rem;
 }
 
 .btn:hover{
   background:rgba(255, 165, 0,.2);
-  color:var(--orange);
+  color:orange;
 }
 
 header{
@@ -82,7 +82,7 @@ header .logo{
 }
 
 header .logo span{
-  color:var(--orange);
+  color:orange;
 }
 
 header .navbar a{
@@ -92,7 +92,7 @@ header .navbar a{
 }
 
 header .navbar a:hover{
-  color:var(--orange);
+  color:orange;
 }
 
 header .icons i{
@@ -103,7 +103,7 @@ header .icons i{
 }
 
 header .icons i:hover{
-  color:var(--orange);
+  color:orange;
 }
 
 header .search-bar-container{
@@ -139,7 +139,7 @@ header .search-bar-container label{
 }
 
 header .search-bar-container label:hover{
-  color:var(--orange);
+  color:orange;
 }
 
 .login-form-container{
@@ -185,7 +185,7 @@ header .search-bar-container label:hover{
 }
 
 .login-form-container form .box:focus{
-  border-color: var(--orange);;
+  border-color: orange;;
 }
 
 .login-form-container form #remember{
@@ -208,7 +208,7 @@ header .search-bar-container label:hover{
 }
 
 .login-form-container form p a{
-  color:var(--orange);
+  color:orange;
 }
 
 .login-form-container form p a:hover{
@@ -289,7 +289,7 @@ header .search-bar-container label:hover{
 }
 
 .home .controls .vid-btn.active{
-  background:var(--orange);
+  background:orange;
 }
 
 .packages .box-container{
@@ -321,7 +321,7 @@ header .search-bar-container label:hover{
 }
 
 .packages .box-container .box .content h3 i{
-  color:var(--orange);
+  color:orange;
 }
 
 .packages .box-container .box .content p{
@@ -332,7 +332,7 @@ header .search-bar-container label:hover{
 
 .packages .box-container .box .content .stars i{
   font-size:1.7rem;
-  color:var(--orange);
+  color:orange;
 }
 
 .packages .box-container .box .content .price{
@@ -386,7 +386,7 @@ header .search-bar-container label:hover{
 
 .gallery .box-container .box .content h3{
   font-size: 2.5rem;
-  /* color:var(--orange); */
+  color:orange;
 }
 
 .gallery .box-container .box .content p{
@@ -435,7 +435,7 @@ header .search-bar-container label:hover{
 }
 
 .footer .box-container .box a:hover{
-  color:var(--orange);
+  color:orange;
   text-decoration: underline;
 }
 
@@ -450,11 +450,17 @@ header .search-bar-container label:hover{
 }
 
 .footer .credit span{
-  color:var(--orange);
+  color:orange;
 }
 
+.addFavourite:hover {
+  cursor: pointer;
+  color: #222;
+}
 
-
+.dropdown {
+display: none;
+}
 
 
 

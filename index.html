@@ -33,10 +33,16 @@
 
       <div class="icons">
         <i class="fas fa-search" id="search-btn"></i>
-        <i class="fas fa-user" id="login-btn"></i>
+        <i class="fas fa-user myMenu" id="login-btn"></i>
+        <div class="dropdown">
+          <ul>
+            <li> <a href="#">Hồ sơ cá nhân</a></li>
+            <li><a href="./myfavortice.html">My Favortice</a></li>
+            <li><a href="./mybooking.html">My Booking</a></li>
+          </ul>       
+        </div>
         <span style="color: white; font-size: 2rem" id="textLog">
-          Đăng nhập</span
-        >
+          Đăng nhập</span>
       </div>
 
       <form action="" class="search-bar-container">
@@ -129,7 +135,7 @@
               "Hạ Long" nghĩa là "con rồng bay xuống
             </p>
             <div class="hearts">
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart addFavourite"></i>
             </div>
             <div class="price">
               <i class="fa-solid fa-calendar-days"></i> 2.000.000 đ <span>3.000.000 đ</span>
@@ -149,7 +155,7 @@
               Dương và được mệnh danh là "Nóc nhà Đông Dương
             </p>
             <div class="hearts">
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart addFavourite"></i>
             </div>
             <div class="price">
               <i class="fa-solid fa-calendar-days"></i> 2.000.000 đ <span>3.000.000 đ</span>
@@ -169,7 +175,7 @@
               là di sản văn hóa thế giới từ năm 1999.
             </p>
             <div class="hearts">
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart addFavourite"></i>
             </div>
             <div class="price">
               <i class="fa-solid fa-calendar-days"></i> 2.000.000 đ <span>3.000.000 đ</span>
@@ -188,7 +194,7 @@
               ôn hoà
             </p>
             <div class="hearts">
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart addFavourite"></i>
             </div>
             <div class="price">
               <i class="fa-solid fa-calendar-days"></i> 2.000 K <span>3.000 K</span>
@@ -206,7 +212,9 @@
               Nam. Vùng đất Đồng Tháp đã được Chúa Nguyễn khai phá vào khoảng
               thế kỷ XVII, XVIII.
             </p>
-            <div class="hearts"><i class="fa-solid fa-heart"></i></i></div>
+            <div class="hearts">
+              <i class="fa-solid fa-heart addFavourite"></i></i>
+            </div>
             <div class="price">
               <i class="fa-solid fa-calendar-days"></i> 2.000 K <span>3.000 K</span>
             </div>
@@ -224,7 +232,7 @@
               Thuận, Việt Nam
             </p>
             <div class="hearts">
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart addFavourite"></i>
             </div>
             <div class="price">
               <i class="fa-solid fa-calendar-days"></i>  2.000 K <span>3.000 K</span>
@@ -431,6 +439,8 @@
     let navbar = document.querySelector(".navbar");
     let videoBtn = document.querySelectorAll(".vid-btn");
     let textLog = document.querySelector("#textLog");
+    let hideMenu = document.querySelector('.myMenu');
+    let dropdown = document.querySelector('.dropdown');
 
     window.onscroll = () => {
       searchBtn.classList.remove("fa-times");
@@ -542,44 +552,58 @@
     let text = document.querySelector("#textLog");
     let btnRegister = document.querySelector("#btnRegister");
     let formlogin = document.querySelector("#form-login");
-    let hearts = document.querySelectorAll('.fa-heart');
+    let addHeart = document.querySelectorAll('.addFavourite');
     let books = document.querySelectorAll('.btnBook');
-    let listHearts =[]
-    // console.log(books);
-    // console.log(books[0].parentNode.childNodes[1].textContent);
-    // console.log(books[0].previousElementSibling.childNodes[2].textContent);
-    console.log(listHearts);
-    console.log(hearts[0].parentNode.parentNode.parentNode.childNodes[1].src);
-    console.log( hearts[0].parentNode.parentNode.childNodes[1].textContent);
-    console.log( hearts[0].parentNode.parentNode.childNodes[7].childNodes[2].textContent);
+    let listHearts = [];
+    let span = document.querySelectorAll('span');
+   
 
     // Kiểm tra Session
     if (sessionStorage.getItem(USERNAME) != null) {
 
       // Thay đổi hiển thị tên User
-      text.innerHTML = sessionStorage.getItem(USERNAME);
+      span[1].lastChild.textContent = sessionStorage.getItem(USERNAME);
       btnRegister.style.display = "none";
 
       // Load tính năng yêu thích
-      hearts.forEach(heart => {
-        heart.addEventListener('click',()=>{
-         heart.style.color= (heart.style.color=='orange')?'black':'orange';
-        //  console.log(heart);
-        //  listHearts.push({
-        //   img: this.parentNode.parentNode.parentNode.childNodes[1].src,
-        //   name: this.parentNode.parentNode.childNodes[1].textContent,
-        //   price: this.parentNode.parentNode.childNodes[7].childNodes[2].textContent
-        //  });
-        //  console.log(listHearts);
-        })
-      });
+    //  let addHeart = document.querySelectorAll('.addFavourite');
+    console.log(addHeart);
 
+    console.log(addHeart[1]);
+    console.log(addHeart[1].parentNode.parentNode.parentNode.childNodes[1].src);
+    console.log(addHeart[1].parentNode.parentNode.childNodes[1].childNodes[1].textContent);
+    console.log(addHeart[1].parentNode.parentNode.childNodes[7].childNodes[2].textContent);
+
+      for ( i = 0 ; i < addHeart.length ; i++){
+        addHeart[i].addEventListener('click', function(){
+          // console.log("abc");
+          // console.log(this);
+          // console.log(this.parentNode.parentNode.childNodes[7].childNodes[2].textContent);
+          this.style.color = ( this.style.color=='orange')?'black':'orange';
+          listHearts.push({
+            img: this.parentNode.parentNode.parentNode.childNodes[1].src,
+            name: this.parentNode.parentNode.childNodes[1].childNodes[1].textContent,
+            price: this.parentNode.parentNode.childNodes[7].childNodes[2].textContent
+          });
+          console.log(listHearts);
+        localStorage.setItem(sessionStorage.getItem(USERNAME),JSON.stringify(listHearts));
+        });
+      };
       // Load tính năng Booking
+
+
       books.forEach(book => {
         book.addEventListener('click',()=>{
           
         })
+        
       });
+      console.log(hideMenu);
+      console.log(dropdown);
+      hideMenu.addEventListener('click',()=>{
+       dropdown.style.display = (dropdown.style.display== 'none')?'block':'none';
+       });  
+
     } else {
     }
   </script>
