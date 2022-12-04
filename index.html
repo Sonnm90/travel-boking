@@ -515,7 +515,6 @@
         //   document.cookie = "isRemember=true; expires=" + date24;
         // }
         sessionStorage.setItem(USERNAME, emailField.value);
-        console.log(1);
         sessionStorage.setItem(PASSWORD, passwordField.value);
         localStorage.setItem(USERNAME, emailField.value);
         localStorage.setItem(PASSWORD, passwordField.value);
@@ -546,11 +545,14 @@
     let hearts = document.querySelectorAll('.fa-heart');
     let books = document.querySelectorAll('.btnBook');
     let listHearts =[]
-    console.log(books);
-    console.log(books[0].parentNode.childNodes[1].textContent);
-    console.log(books[0].previousElementSibling.childNodes[2].textContent);
+    // console.log(books);
+    // console.log(books[0].parentNode.childNodes[1].textContent);
+    // console.log(books[0].previousElementSibling.childNodes[2].textContent);
     console.log(listHearts);
     console.log(hearts[0].parentNode.parentNode.parentNode.childNodes[1].src);
+    console.log( hearts[0].parentNode.parentNode.childNodes[1].textContent);
+    console.log( hearts[0].parentNode.parentNode.childNodes[7].childNodes[2].textContent);
+
     // Kiểm tra Session
     if (sessionStorage.getItem(USERNAME) != null) {
 
@@ -561,14 +563,14 @@
       // Load tính năng yêu thích
       hearts.forEach(heart => {
         heart.addEventListener('click',()=>{
-         heart.style.color= (heart.style.color=='orange')?'none':'orange';
-         console.log(heart);
-         listHearts.push({
-          img: this.parentNode.parentNode.parentNode.childNodes[1].src,
-          name: this.parentNode.parentNode.childNodes[1].textContent,
-          price: this.parentNode.parentNode.childNodes[7].childNodes[2].textContent
-         });
-         console.log(listHearts);
+         heart.style.color= (heart.style.color=='orange')?'black':'orange';
+        //  console.log(heart);
+        //  listHearts.push({
+        //   img: this.parentNode.parentNode.parentNode.childNodes[1].src,
+        //   name: this.parentNode.parentNode.childNodes[1].textContent,
+        //   price: this.parentNode.parentNode.childNodes[7].childNodes[2].textContent
+        //  });
+        //  console.log(listHearts);
         })
       });
 
