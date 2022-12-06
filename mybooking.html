@@ -1,187 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel Booking</title>
 
-    <!-- font awesome cdn link  -->
-    <script
-      src="https://kit.fontawesome.com/68734f4fab.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- header section starts  -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Booking</title>
+  <link rel="stylesheet" href="style.css" />
 
-    <header>
-      <div id="menu-bar" class="fas fa-bars"></div>
+  <style>
+    body {
+      background-image: url("./images/booking.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-      <a href="#" class="logo"><span>T</span>ravel</a>
+    input {
+      width: 300px;
+      height: 30px;
+      border: 2px solid #fff;
+      background-color: rgba(0, 0, 0, 0.266);
+      color: #fff;
+    }
 
-      <nav class="navbar">
-        <a href="./index.html">Trang chủ</a>
-        <a href="#book">Book Lịch</a>
-        <a href="./index.html#packages">Tour trọn gói</a>
-        <a href="./index.html#gallery">Điểm đến</a>
-        <a href="./index.html">Phản hồi</a>
-        <a href="#contact">Liên hệ</a>
-        <!-- <a href="./register.html">Đăng nh</a> -->
-      </nav>
+    select {
+      width: 300px;
+      height: 30px;
+      border: 2px solid #fff;
+      background-color: rgba(0, 0, 0, 0.266);
+    }
 
-      <div class="icons">
-        <i class="fas fa-search" id="search-btn"></i>
-        <i class="fas fa-user" id="login-btn"></i>
-        <span style="color: white; font-size: 2rem"> Log In</span>
+    i {
+      color: red;
+      font-size: 16px;
+    }
+
+    .container {
+      width: 800px;
+      margin: 80px auto;
+    }
+
+    .form {
+      display: flex;
+      justify-content: space-around;
+      background-color: rgba(0, 0, 0, 0.518);
+      padding: 50px;
+      color: #fff;
+
+    }
+
+    .form-control {
+      margin: 30px auto;
+    }
+
+    .dropdown li {
+      position: relative;
+      float: left;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown {
+      display: none;
+    }
+
+    .dropdown ul,
+    .dropdown li {
+      padding: 0;
+      margin: 0;
+    }
+
+    .dropdown li {
+      position: relative;
+      float: left;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown li a {
+      width: 200px;
+      border-right: 1px solid #ccc;
+      margin-left: 10px;
+      display: block;
+      text-decoration: none;
+      line-height: 30px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .dropdown ul ul li a {
+      width: 175px;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .dropdown li a:hover {
+      background-color: red;
+    }
+
+    .dropdown ul ul {
+      position: absolute;
+      top: 30px;
+      left: 15px;
+      visibility: hidden;
+    }
+
+    .dropdown ul li:hover ul {
+      visibility: visible;
+    }
+  </style>
+
+  <!-- font awesome cdn link  -->
+  <script src="https://kit.fontawesome.com/68734f4fab.js" crossorigin="anonymous"></script>
+  <!-- custom css file link  -->
+</head>
+
+<body>
+  <!-- header section starts  -->
+  <header>
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>T</span>RAVEL</a>
+
+    <nav class="navbar">
+      <a href="./index.html">Trang chủ</a>
+      <a href="./index.html#book">Book Lịch</a>
+      <a href="./index.html#packages">Tour Trọn Gói</a>
+      <a href="./index.html#gallery">Điểm Đến</a>
+      <a href="./index.html#review">Phản Hồi</a>
+      <a href="#contact">Liên Hệ</a>
+      <!-- <a href="./register.html">Đăng nh</a> -->
+    </nav>
+
+    <div class="icons" id="user">
+      <i class="fas fa-search" id="search-btn"></i>
+      <div class="dropdown">
+        <ul>
+          <li><i class="fas fa-user myMenu" id="dropdownIcon"></i>
+            <ul>
+              <li> <a href="#">Hồ sơ cá nhân</a></li>
+              <li><a href="./myfavortice.html">My Favortice</a></li>
+              <li><a href="./mybooking.html">My Booking</a></li>
+              <li><a href="" id="'logOut">Log Out</a></li>
+
+            </ul>
+          </li>
+        </ul>
       </div>
-
-      <form action="" class="search-bar-container">
-        <input type="search" id="search-bar" placeholder="search here..." />
-        <label for="search-bar" class="fas fa-search"></label>
-      </form>
-    </header>
-
-    <!-- header section ends -->
-
-    <!-- login form container  -->
-
-    <div class="login-form-container">
-      <i class="fas fa-times" id="form-close"></i>
-
-      <!-- <form action="">
-        <h3>login</h3>
-        <input type="email" class="box" placeholder="enter your email" />
-        <input type="password" class="box" placeholder="enter your password" />
-        <input type="submit" value="login now" class="btn" />
-        <input type="checkbox" id="remember" />
-        <label for="remember">remember me</label>
-        <p>forget password? <a href="#">click here</a></p>
-        <p>don't have and account? <a href="#">register now</a></p>
-      </form> -->
+      <span style="color: white; font-size: 2rem" id="textLog">
+        Đăng nhập</span>
     </div>
 
-    <!-- home section starts  -->
+    <form action="" class="search-bar-container">
+      <input type="search" id="search-bar" placeholder="search here..." />
+      <label for="search-bar" class="fas fa-search"></label>
+    </form>
+  </header>
 
-    <!-- home section ends -->
+  <!-- header section ends -->
 
-    <!-- packages section starts  -->
+  <!-- login form container  -->
 
-    <section class="packages" id="packages">
-      <br />
-      <br />
-      <h1 class="heading">
-        <span>M</span>
-        <span>Y</span>
-        <span>B</span>
-        <span>O</span>
-        <span>O</span>
-        <span>K</span>
-        <span>I</span>
-        <span>N</span>
-        <span>G</span>
-      </h1>
-    </section>
+  <div class="login-form-container">
+    <i class="fas fa-times" id="form-close"></i>
 
-    <!-- packages section ends -->
+    <form action="" id="form-login">
+      <h3>login</h3>
+      <input type="email" id="email" class="box" placeholder="enter your email" />
+      <input type="password" id="password" class="box" placeholder="enter your password" />
+      <input type="submit" id="loginBtn" value="login now" class="btn" />
+      <input type="checkbox" id="remember" />
+      <label for="remember">remember me</label>
+      <p>forget password? <a href="./register.html">Nhấn vào đây</a></p>
+      <p>don't have and account? <a href="./register.html">Đăng ký</a></p>
+    </form>
+  </div>
+  <!-- packages section starts  -->
 
-    <!-- review section starts  -->
-
-    <!-- review section ends -->
-
-    <!-- contact section starts  -->
-
-    <!-- contact section ends -->
-
-    <!-- brand section  -->
-
-    <!-- footer section  -->
-
-    <section class="footer">
-      <div class="box-container" id="contact">
-        <div class="box">
-          <h3>Giới thiệu:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            quas magni pariatur est accusantium voluptas enim nemo facilis sit
-            debitis.
-          </p>
+  <section class="packages" id="packages">
+    <br />
+    <br />
+    <h1 class="heading">
+      <span>M</span>
+      <span>Y</span>
+      <span>B</span>
+      <span>O</span>
+      <span>O</span>
+      <span>K</span>
+      <span>I</span>
+      <span>N</span>
+      <span>G</span>
+    </h1>
+  </section>
+  <div class="container">
+    <div class="form">
+      <div class="form-left">
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; Name:</h3>
+          <input type="text" required />
         </div>
-        <div class="box">
-          <h3>Chi nhánh</h3>
-          <a href="#">Hà Nội:</a>
-          <a href="#">Đà Nẵng:</a>
-          <a href="#">TP Hồ Chí Minh:</a>
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; Arrival date:</h3>
+          <input type="date" required />
         </div>
-        <div class="box">
-          <h3>Liên hệ:</h3>
-          <a href="#">facebook</a>
-          <a href="#">instagram</a>
-          <a href="#">twitter</a>
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; Departure date:</h3>
+          <input type="date" required />
+        </div>
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; Choose Hotel:</h3>
+          <select>
+            <option value="a">2 stars</option>
+            <option value="b">3 stars</option>
+            <option value="c">4 stars</option>
+          </select>
         </div>
       </div>
+      <div class="form-right">
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; Email:</h3>
+          <input type="email" required />
+        </div>
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; Time:</h3>
+          <input type="time" required />
+        </div>
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; Time:</h3>
+          <input type="time" required />
+        </div>
+        <div class="form-control">
+          <h3><i class="fa-solid fa-user"></i>&nbsp; No.of people:</h3>
+          <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <h1 class="credit">created by <span> </span> | all rights reserved!</h1>
-    </section>
+  <!-- footer section  -->
 
-    <!-- custom js file link  -->
-  </body>
-  <script>
-    let searchBtn = document.querySelector("#search-btn");
-    let searchBar = document.querySelector(".search-bar-container");
-    let formBtn = document.querySelector("#login-btn");
-    let loginForm = document.querySelector(".login-form-container");
-    let formClose = document.querySelector("#form-close");
-    let menu = document.querySelector("#menu-bar");
-    let navbar = document.querySelector(".navbar");
-    let videoBtn = document.querySelectorAll(".vid-btn");
-    let textLog = document.querySelector("#textLog");
+  <section class="footer">
+    <div class="box-container" id="contact">
+      <div class="box">
+        <h3>Giới thiệu:</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          quas magni pariatur est accusantium voluptas enim nemo facilis sit
+          debitis.
+        </p>
+      </div>
+      <div class="box">
+        <h3>Chi nhánh</h3>
+        <a href="#">Hà Nội:</a>
+        <a href="#">Đà Nẵng:</a>
+        <a href="#">TP Hồ Chí Minh:</a>
+      </div>
+      <div class="box">
+        <h3>Liên hệ:</h3>
+        <a href="#">facebook</a>
+        <a href="#">instagram</a>
+        <a href="#">twitter</a>
+      </div>
+    </div>
 
-    window.onscroll = () => {
-      searchBtn.classList.remove("fa-times");
-      searchBar.classList.remove("active");
-      menu.classList.remove("fa-times");
-      navbar.classList.remove("active");
-      loginForm.classList.remove("active");
-    };
+    <h1 class="credit">created by <span> </span> | all rights reserved!</h1>
+  </section>
 
-    menu.addEventListener("click", () => {
-      menu.classList.toggle("fa-times");
-      navbar.classList.toggle("active");
-    });
+  <!-- custom js file link  -->
+</body>
+<script src="script.js"></script>
+<script src=""></script>
 
-    searchBtn.addEventListener("click", () => {
-      searchBtn.classList.toggle("fa-times");
-      searchBar.classList.toggle("active");
-    });
-
-    // formBtn.addEventListener('click', () =>{
-    //     loginForm.classList.add('active');
-    // });
-    textLog.addEventListener("click", () => {
-      loginForm.classList.add("active");
-    });
-
-    formClose.addEventListener("click", () => {
-      loginForm.classList.remove("active");
-    });
-
-    videoBtn.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelector(".controls .active").classList.remove("active");
-        btn.classList.add("active");
-        let src = btn.getAttribute("data-src");
-        document.querySelector("#video-slider").src = src;
-      });
-    });
-
-    let text = document.querySelector("#textLog");
-    let btnRegister = document.querySelector("#btnRegister");
-
-    if (sessionStorage.getItem(USERNAME) != null) {
-      text.innerHTML = sessionStorage.getItem(USERNAME);
-      btnRegister.style.display = "none";
-    }
-  </script>
 </html>
