@@ -65,8 +65,8 @@ var product = [
 ];
 var saveProduct = JSON.stringify(product);
 localStorage.setItem("product", saveProduct);
-let product = JSON.parse(localStorage.getItem("product"));
-console.log(product);
+// let product = JSON.parse(localStorage.getItem("product"));
+// console.log(product);
 
 function renderProduct(product) {
   let data = "";
