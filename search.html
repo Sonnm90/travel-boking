@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/68734f4fab.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"><span>T</span>RAVEL</a>
+
+        <nav class="navbar">
+            <a href="#home">Trang chủ</a>
+            <a href="#book">Book Lịch</a>
+            <a href="#packages">Tour Trọn Gói</a>
+            <a href="#gallery">Điểm Đến</a>
+            <a href="#review">Phản Hồi</a>
+            <a href="#contact">Liên Hệ</a>
+            <!-- <a href="./register.html">Đăng nh</a> -->
+        </nav>
+
+        <div class="icons" id="user">
+            <i class="fas fa-search" id="search-btn"></i>
+            <div class="dropdown">
+                <ul>
+                    <li><i class="fas fa-user myMenu" id="dropdownIcon"></i>
+                        <ul>
+                            <li> <a href="#">Hồ sơ cá nhân</a></li>
+                            <li><a href="./myfavortice.html">My Favortice</a></li>
+                            <li><a href="./mybooking.html">My Booking</a></li>
+                            <li><a href="" id="logOut">Log Out</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span style="color: white; font-size: 2rem" id="textLog">
+                Đăng nhập</span>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" onchange="searchData()" placeholder=" search here..." />
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+    <div class="box-container" id="showProduct">
+
+    </div>
+
+</body>
+<script src="search.js"></script>
+<script src="script.js"></script>
+
+</html>
